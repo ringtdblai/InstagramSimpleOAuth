@@ -36,5 +36,6 @@
                     clientSecret:(NSString *)clientSecret
                      callbackURL:(NSURL *)callbackURL
                       completion:(void (^)(InstagramLoginResponse *response, NSError *error))completion;
+- (void)dismissViewController;
 
 @end
