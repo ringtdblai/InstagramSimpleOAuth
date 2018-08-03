@@ -101,6 +101,8 @@ NSString *const InstagramLoginCancelButtonTitle = @"OK";
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
     [self hideProgressHUD];
+    UIBarButtonItem *cancelBarItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(dismissViewController)];
+    self.navigationItem.leftBarButtonItem = cancelBarItem;
 }
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
