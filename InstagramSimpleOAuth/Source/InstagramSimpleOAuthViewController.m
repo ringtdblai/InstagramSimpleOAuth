@@ -34,6 +34,7 @@ NSString *const InstagramLoginCancelButtonTitle = @"OK";
 
 @interface InstagramSimpleOAuthViewController () <UIWebViewDelegate>
 
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *dismissBarItem;
 @property (weak, nonatomic) IBOutlet UIWebView *instagramWebView;
 @property (strong, nonatomic) InstagramAuthenticationManager *instagramAuthenticationManager;
 
@@ -101,8 +102,10 @@ NSString *const InstagramLoginCancelButtonTitle = @"OK";
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
     [self hideProgressHUD];
+    
     UIBarButtonItem *cancelBarItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(dismissViewController)];
     self.navigationItem.leftBarButtonItem = cancelBarItem;
+    _dismissBarItem = cancelBarItem;
 }
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
@@ -162,6 +165,9 @@ NSString *const InstagramLoginCancelButtonTitle = @"OK";
 
 - (void)dismissViewController
 {
+    if (_dismissBarItem != nil) {
+        self.navigationItem.leftBarButtonItem = nil;
+    }
     if (self.navigationController && self.navigationController.viewControllers.count > 1) {
         [self.navigationController popViewControllerAnimated:YES];
     } else {
