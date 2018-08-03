@@ -160,7 +160,7 @@ NSString *const InstagramLoginCancelButtonTitle = @"OK";
 
 - (void)dismissViewController
 {
-    if (self.navigationController) {
+    if (self.navigationController && self.navigationController.viewControllers.count > 1) {
         [self.navigationController popViewControllerAnimated:YES];
     } else {
         [self dismissViewControllerAnimated:YES

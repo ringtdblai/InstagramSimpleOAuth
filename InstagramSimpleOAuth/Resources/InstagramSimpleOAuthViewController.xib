@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -21,7 +22,7 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lLQ-Of-2XJ" userLabel="instagramWebView">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <rect key="frame" x="0.0" y="44" width="320" height="490"/>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <connections>
                         <outlet property="delegate" destination="-1" id="EPh-Dd-iPq"/>
@@ -30,13 +31,14 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="lLQ-Of-2XJ" firstAttribute="top" secondItem="paa-W6-djn" secondAttribute="top" identifier="instagramWebView.top-to-superview-top" id="1OJ-HZ-Rrc"/>
+                <constraint firstItem="lLQ-Of-2XJ" firstAttribute="top" secondItem="FUF-ZI-25u" secondAttribute="top" identifier="instagramWebView.top-to-superview-top" id="1OJ-HZ-Rrc"/>
                 <constraint firstAttribute="trailing" secondItem="lLQ-Of-2XJ" secondAttribute="trailing" identifier="superview-trailing-to-instagramWebView.trailing" id="S2t-Rh-Bjy"/>
-                <constraint firstAttribute="bottom" secondItem="lLQ-Of-2XJ" secondAttribute="bottom" identifier="superview-bottom-to-instagramWebView.bottom" id="h8o-U1-RKm"/>
+                <constraint firstItem="FUF-ZI-25u" firstAttribute="bottom" secondItem="lLQ-Of-2XJ" secondAttribute="bottom" identifier="superview-bottom-to-instagramWebView.bottom" id="h8o-U1-RKm"/>
                 <constraint firstItem="lLQ-Of-2XJ" firstAttribute="leading" secondItem="paa-W6-djn" secondAttribute="leading" identifier="instagramWebView.leading-to-superview-leading" id="waE-o9-yDa"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="FUF-ZI-25u"/>
             <point key="canvasLocation" x="-416" y="-28"/>
         </view>
     </objects>
